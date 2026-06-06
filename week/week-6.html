@@ -1,0 +1,268 @@
+<template>
+    <style>
+        /* Khung chứa nội dung chính */
+        .ethical-ai-portfolio {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Tiêu đề chính và tiêu đề phụ */
+        .ethical-ai-portfolio h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 28px;
+            margin-bottom: 16px;
+        }
+
+        .ethical-ai-portfolio h3 {
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* Định dạng văn bản và danh sách */
+        .ethical-ai-portfolio p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .ethical-ai-portfolio ul, .ethical-ai-portfolio ol {
+            padding-left: 22px;
+            margin-bottom: 16px;
+        }
+
+        .ethical-ai-portfolio li {
+            margin-bottom: 8px;
+        }
+
+        /* Khung chứa nhật ký Prompt / Khung tiến trình */
+        .log-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .log-box.uet-policy { border-top: 4px solid #3498db; }
+        .log-box.prompt-diary { border-top: 4px solid #e67e22; }
+        .log-box.infographic-design { border-top: 4px solid #2ecc71; }
+
+        /* Khung trích dẫn Prompt */
+        .prompt-quote {
+            background-color: #f1f2f6;
+            border-left: 4px solid #7f8c8d;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Lưới hiển thị 6 nguyên tắc cá nhân */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .principle-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 14px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Định dạng bảng học thuật */
+        .academic-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .academic-table th {
+            background-color: #34495e;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+        }
+
+        .academic-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .academic-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Điểm nhấn từ khóa */
+        .ethical-ai-portfolio code {
+            background-color: #f1f2f6;
+            color: #c0392b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+
+        .ethical-ai-portfolio strong {
+            color: #1a252f;
+        }
+    </style>
+
+    <my-portfolio-box>
+        <h1 slot="title">Bài tập buổi 6: Phát triển kỹ năng sử dụng AI có trách nhiệm và đạo đức trong học tập</h1>
+        <div slot="content" class="ethical-ai-portfolio">
+            
+            <p><strong>Cơ sở đào tạo:</strong> Trường Đại học Công nghệ (UET) – Đại học Quốc gia Hà Nội</p>
+
+            <!-- PHẦN I -->
+            <section>
+                <h2>PHẦN I: Nghiên cứu chính sách của Trường Đại học Công nghệ (UET) về việc sử dụng AI</h2>
+                
+                <div class="log-box uet-policy">
+                    <h3>1. Tóm tắt các điểm chính trong chính sách của UET</h3>
+                    <p>Là một trường đại học top đầu về công nghệ, UET đã sớm ban hành <em>"Quyết định số 1405/QĐ-ĐHCN về Khung hướng dẫn kiểm soát và ứng dụng Trí tuệ nhân tạo tạo sinh (GenAI) trong đào tạo"</em>. Các điểm cốt lõi bao gồm:</p>
+                    <ul>
+                        <li><strong>Quy định tỷ lệ AI (AI-generated index):</strong> Tất cả bài tập lớn, khóa luận tốt nghiệp phải đi qua hệ thống quét nội dung AI (Turnitin AI Detector/DoIT). Tỷ lệ nội dung do AI tạo ra không được vượt quá 15% tổng dung lượng văn bản.</li>
+                        <li><strong>Quy định về Source Code (Đặc thù UET):</strong> Đối với các môn lập trình, sinh viên được dùng Copilot/ChatGPT để debug hoặc tối ưu thuật toán, nhưng nghiêm cấm việc dùng AI gen toàn bộ cấu trúc mã nguồn (source code) của bài tập lớn. Sinh viên có thể bị gọi vấn đáp trực tiếp để giải thích code nếu hệ thống phát hiện nghi vấn.</li>
+                        <li><strong>Nghĩa vụ minh bạch:</strong> Sinh viên bắt buộc phải có mục "Phụ lục sử dụng AI" ở cuối bài báo cáo, ghi rõ công cụ sử dụng và mục đích cụ thể.</li>
+                    </ul>
+                </div>
+
+                <h3>2. So sánh đối chiếu với các trường khác</h3>
+                <table class="academic-table">
+                    <thead>
+                        <tr>
+                            <th>Tiêu chí so sánh</th>
+                            <th>Trường Đại học Công nghệ (UET)</th>
+                            <th>Trường Đại học Bách Khoa Hà Nội (HUST)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cách tiếp cận</strong></td>
+                            <td>Tập trung mạnh vào kiểm soát tính nguyên bản của cả văn bản lẫn mã nguồn (Source code).</td>
+                            <td>Tập trung vào việc tích hợp AI vào quy trình thi cử và đánh giá năng lực thực hành trực tiếp.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chế tài xử phạt</strong></td>
+                            <td>Hủy kết quả bài tập lớn, trừ 50-100% điểm thành phần tùy mức độ vi phạm.</td>
+                            <td>Đưa vào điểm rèn luyện và xét lại tư cách dự thi nếu vi phạm quy chế liêm chính lần 2.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>3. Nhận định cá nhân</h3>
+                <p>Chính sách của UET rất thực tế, không "cấm mù quáng" mà đưa ra con số định lượng rõ ràng (15%). Điều này giúp sinh viên ngành công nghệ vừa tận dụng được tiến bộ kỹ thuật để tăng năng suất, vừa không ỷ lại dẫn đến mất kỹ năng code tay và tư duy thuật toán gốc.</p>
+            </section>
+
+            <!-- PHẦN II -->
+            <section>
+                <h2>PHẦN II: Thực hiện nhiệm vụ học tập với sự hỗ trợ của AI</h2>
+                <p><strong>Nhiệm vụ lựa chọn:</strong> Lập đề cương và viết phân tích tổng quan tài liệu cho bài nghiên cứu: <em>"Ứng dụng Machine Learning để dự đoán lưu lượng giao thông tại các nút giao trọng điểm của Hà Nội"</em>.</p>
+                
+                <div class="log-box prompt-diary">
+                    <h3>1. Nhật ký Prompt và Đầu ra của AI</h3>
+                    
+                    <div class="prompt-quote">
+                        <strong>Prompt 1 (Thiết kế kiến trúc hệ thống & Đề cương):</strong><br>
+                        "Tôi là sinh viên K68 ngành Khoa học Máy tính tại UET. Hãy đóng vai một Tiến sĩ chuyên ngành AI/Data Science, gợi ý cho tôi cấu trúc một bài nghiên cứu gồm 4 chương về đề tài 'Ứng dụng Machine Learning dự đoán lưu lượng giao thông Hà Nội'. Đề xuất các thuật toán phù hợp cho dữ liệu chuỗi thời gian (time-series data) này."
+                    </div>
+                    <p><em>Đầu ra của AI (Trích đoạn):</em> AI đề xuất khung nghiên cứu 4 chương và gợi ý sử dụng các mô hình: LSTM (Long Short-Term Memory), ARIMA, và XGBoost. Đồng thời gợi ý cấu trúc dữ liệu đầu vào gồm camera giao thông và dữ liệu thời tiết.</p>
+
+                    <div class="prompt-quote">
+                        <strong>Prompt 2 (Tổng hợp lý thuyết nền tảng):</strong><br>
+                        "Hãy tóm tắt ưu và nhược điểm của mô hình LSTM so với GRU trong bài toán dự đoán lưu lượng giao thông chuỗi thời gian. Định dạng dưới dạng bảng học thuật."
+                    </div>
+                    <p><em>Đầu ra của AI (Trích đoạn):</em> AI trả ra bảng so sánh chi tiết về thời gian huấn luyện (GRU nhanh hơn), khả năng xử lý tập dữ liệu lớn (LSTM tốt hơn với các pattern dài hạn), và số lượng tham số.</p>
+                </div>
+
+                <h3>2. Quá trình Đánh giá, Chỉnh sửa và Tích hợp của Tác giả</h3>
+                <ul>
+                    <li><strong>Đánh giá phê phán (Critique):</strong> AI gợi ý sử dụng mô hình ARIMA cho giao thông Hà Nội, nhưng thực tế giao thông Hà Nội có tính phi tuyến tính rất cao do ùn tắc bất thường, ARIMA (mô hình tuyến tính) sẽ bị sai số lớn. Tác giả quyết định loại bỏ ARIMA, chỉ giữ lại LSTM và bổ sung mô hình Graph Neural Network (GNN) để xử lý dữ liệu không gian nút giao.</li>
+                    <li><strong>Sửa đổi văn phong:</strong> Chuyển dịch toàn bộ thuật ngữ chuyên ngành do AI dịch thô sang ngôn ngữ chuẩn học thuật của UET (Ví dụ: AI dịch <code>"time-series"</code> thành "loạt thời gian", tác giả sửa lại thành "chuỗi thời gian").</li>
+                    <li><strong>Kết quả tích hợp:</strong> Bản thảo cuối cùng là sự kết hợp giữa khung cấu trúc logic của AI và tư duy thực tế về hạ tầng giao thông Hà Nội của tác giả.</li>
+                </ul>
+
+                <h3>3. Trích dẫn việc sử dụng AI minh bạch</h3>
+                <p><strong>Trong bài viết:</strong> "Cấu trúc so sánh các mô hình học sâu (Deep Learning) trong chương 2 được tham khảo và chuẩn hóa với sự trợ giúp của mô hình ngôn ngữ lớn ChatGPT-4o (OpenAI, 2026)."</p>
+                <p><strong>Tài liệu tham khảo:</strong> OpenAI. (2026). ChatGPT (Phiên bản GPT-4o) [Mô hình ngôn ngữ lớn]. https://chat.openai.com/. (Phản hồi cho prompt ngày 18/05/2026 về cấu trúc mô hình LSTM và GRU).</p>
+            </section>
+
+            <!-- PHẦN III -->
+            <section>
+                <h2>PHẦN III: Phân tích các vấn đề đạo đức trong học thuật</h2>
+                
+                <h3>1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật</h3>
+                <p><strong>Hỗ trợ hợp lý:</strong> Sử dụng AI để sinh mã giả (Pseudocode), giải thích cơ chế hoạt động của thuật toán Backpropagation, hoặc tìm các bài báo Q1/Q2 liên quan đến đề tài.</p>
+                <p><strong>Gian lận học thuật:</strong> Đưa toàn bộ đề bài bài tập lớn lên AI, bắt AI viết code hoàn chỉnh bằng Python, sau đó đổi tên biến, xóa comment đổi thành tên mình rồi nộp lên GitHub của môn học.</p>
+
+                <h3>2. Vấn đề về quyền sở hữu trí tuệ và trích dẫn</h3>
+                <p>Các mô hình AI khi sinh code thường lấy từ các kho mã nguồn mở (GitHub). Nếu sinh viên copy code đó mà không hiểu rằng mã đó thuộc giấy phép nào (MIT, Apache, hay GPL), họ có nguy cơ vi phạm bản quyền phần mềm nghiêm trọng. Việc trích dẫn "Code sinh bởi AI" hiện tại vẫn chưa được công nhận là một nguồn học thuật chính thống trong các bài báo khoa học chuẩn ISI/Scopus.</p>
+
+                <h3>3. Tác động đến quá trình học tập và phát triển kỹ năng</h3>
+                <p>Đối với sinh viên UET, việc lạm dụng AI sẽ dẫn đến hội chứng "Lập trình viên Copy-Paste". Sinh viên có thể hoàn thành bài tập rất nhanh nhưng khi đi phỏng vấn tuyển dụng, trước một tấm bảng trắng (Whiteboard coding) yêu cầu tự viết thuật toán giải quyết bài toán thực tế, sinh viên sẽ hoàn toàn bất lực vì đã đánh mất tư duy logic cốt lõi.</p>
+            </section>
+
+            <!-- PHẦN IV -->
+            <section>
+                <h2>PHẦN IV: Bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm</h2>
+                <p>Xây dựng gồm 6 nguyên tắc áp dụng trực tiếp cho bản thân tại UET:</p>
+                
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <strong>1. Nguyên tắc "Hộp đen lý thuyết"</strong><br>
+                        Tôi không bao giờ sử dụng bất kỳ đoạn code hay thuật toán nào do AI sinh ra nếu bản thân tôi không tự giải thích được từng dòng lệnh của nó hoạt động như thế nào.
+                    </div>
+                    <div class="principle-card">
+                        <strong>2. Nguyên tắc "15% Giới hạn"</strong><br>
+                        Nghiêm túc tự kiểm tra bài viết qua các công cụ quét trước khi nộp, đảm bảo chất xám cá nhân luôn chiếm ít nhất 85% nội dung.
+                    </div>
+                    <div class="principle-card">
+                        <strong>3. Nguyên tắc "Nguồn gốc rõ ràng"</strong><br>
+                        Mọi ý tưởng, sơ đồ kiến trúc hệ thống hoặc bảng số liệu có sự can thiệp của AI đều phải được khai báo rõ ràng trong phần "Phụ lục sử dụng AI".
+                    </div>
+                    <div class="principle-card">
+                        <strong>4. Nguyên tắc "Chống ảo tưởng"</strong><br>
+                        Luôn thực hiện chạy thử nghiệm (Testing) độc lập đối với dữ liệu do AI cung cấp để loại bỏ các thông tin sai lệch do AI tự "bịa" ra.
+                    </div>
+                    <div class="principle-card">
+                        <strong>5. Nguyên tắc "Phản biện kép"</strong><br>
+                        Sử dụng AI đóng vai trò làm phản biện (Reviewer) để tìm ra các lỗ hổng bảo mật trong code hoặc lỗi logic trong bài luận của mình nhằm tự nâng cao chất lượng.
+                    </div>
+                    <div class="principle-card">
+                        <strong>6. Nguyên tắc "Bảo mật mã nguồn"</strong><br>
+                        Không upload các dự án nghiên cứu có tính bảo mật cao của phòng thí nghiệm (Lab) trường UET lên các nền tảng AI công cộng.
+                    </div>
+                </div>
+            </section>
+
+            <!-- PHẦN V -->
+            <section>
+                <h2>PHẦN V: Thiết kế Infographic "Sử dụng AI có trách nhiệm tại UET"</h2>
+                
+                <div class="log-box infographic-design">
+                    <h3>1. Thông số thiết kế chung</h3>
+                    <ul>
+                        <li><strong>Tone màu chủ đạo:</strong> Xanh dương UET (Deep Blue - thể hiện công nghệ, học thuật) và màu Cam (Cảnh báo, năng động).</li>
+                        <li><strong>Tiêu đề lớn (Headline):</strong> ETHICAL AI IN UET: CODE THÔNG MINH - HỌC CHẤT LƯỢNG.</li>
+                    </ul>
+
+                    <h3>2. Layout & Nội dung trực quan trên Infographic</h3>
+                    <p><em>(Các tệp sơ đồ thiết kế đồ họa và cấu trúc phân tầng visual hierarchy chi tiết của Infographic được đính kèm trong hệ thống lưu trữ nội bộ của dự án)</em></p>
+                </div>
+            </section>
+            
+            <pdf-viewer src="../resource/week-6/info.pdf"></pdf-viewer>
+        </div>
+    </my-portfolio-box>
+</template>

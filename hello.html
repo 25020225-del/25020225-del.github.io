@@ -1,0 +1,33 @@
+<template>
+    <!-- Dùng trực tiếp trong file HTML -->
+    <my-portfolio-box>
+        <!-- Nhét nội dung vào đúng chỗ thông qua thuộc tính slot -->
+        <h1 slot="title">My portfolio</h1>
+        <div slot="content">
+            <h2>Một chút về bản thân:</h2>
+            <img src="resource/hello/avt.jpg" alt="Avatar" width="300" onclick="zoomImage(event)">
+            <ul slot="content">
+                <li>Tên: Ngô Vũ Đình Khoa.</li>
+                <li>Lớp: K70 - IT7.</li>
+                <li>Mã sinh viên: 25020225.</li>
+                <li>Facebook: <a href="https://www.facebook.com/khoai.ngo.58">Nhấp vào đây</a></li>
+            </ul>
+            <h2>Mục tiêu:</h2>
+            <ul>
+                <li>Trở thành top 1 lập trình viên Việt Nam và thế giới.</li>
+            </ul>
+            <h2>Sở thích:</h2>
+            <ul>
+                <li>Câu cá</li>
+                <li>Vẽ tranh</li>
+            </ul>
+            <h2>Portfolio này có gì?</h2>
+            <ul>
+                <li>Một giao diện được thiết kế để dễ nhìn nhất.</li>
+                <li>Những gì tớ đã học được trong môn công nghệ số.</li>
+                <li>Những bài tập nhỏ tớ đã cố gắng trong môn này.</li>
+            </ul>
+        </div>
+        
+    </my-portfolio-box>
+</template>

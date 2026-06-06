@@ -1,0 +1,147 @@
+<template>
+    <style>
+        /* Khung chứa nội dung chính */
+        .project-portfolio {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Tiêu đề chính và tiêu đề phụ */
+        .project-portfolio h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .project-portfolio h3 {
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* Đoạn văn và danh sách */
+        .project-portfolio p {
+            margin-bottom: 12px;
+        }
+
+        .project-portfolio ul {
+            margin-bottom: 16px;
+            padding-left: 20px;
+        }
+
+        .project-portfolio li {
+            margin-bottom: 8px;
+        }
+
+        /* Khung thông tin tổng quan */
+        .overview-box {
+            background-color: #fdfefe;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+
+        /* Khung phân tách các thách thức */
+        .challenge-card {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            padding: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Đổi màu viền riêng cho từng thách thức để dễ phân biệt */
+        .challenge-card.trello-task {
+            border-left-color: #2ecc71;
+        }
+
+        .challenge-card.git-task {
+            border-left-color: #9b59b6;
+        }
+
+        /* Làm nổi bật các đoạn text đặc biệt */
+        .project-portfolio strong {
+            color: #1a252f;
+        }
+
+        .project-portfolio code {
+            background-color: #eaeded;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Courier, monospace;
+            font-size: 0.9em;
+            color: #c0392b;
+        }
+
+        .project-portfolio em {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+
+    <my-portfolio-box>
+        <h1 slot="title">Bài tập buổi 4: Thành thạo các công cụ hợp tác trực tuyến và năng lực điều phối cá nhân</h1>
+        <div slot="content" class="project-portfolio">
+            
+            <!-- TỔNG QUAN DỰ ÁN -->
+            <section class="overview-box">
+                <h2>1. Tổng quan dự án & Hệ thống công cụ</h2>
+                <p><strong>Dự án:</strong> Bài tập lớn - Xây dựng trang web quản lý đấu giá.</p>
+                <p><strong>Lưu ý vận hành:</strong> Tất cả các tính năng và không gian làm việc trong dự án đều được thiết lập ở chế độ riêng tư (Private), chỉ cho phép truy cập nội bộ thông qua tài khoản của các thành viên đóng góp (Contributors).</p>
+                
+                <h3>Danh sách các ứng dụng sử dụng:</h3>
+                <ul>
+                    <li><strong>Google Docs:</strong> Soạn thảo tài liệu và viết báo cáo liên quan.</li>
+                    <li><strong>Trello:</strong> Quản lý tiến độ, chia nhỏ và phân phối tác vụ dự án.</li>
+                    <li><strong>GitHub:</strong> Lưu trữ mã nguồn, quản lý phiên bản và tài nguyên dự án.</li>
+                    <li><strong>Messenger:</strong> Kênh giao tiếp chính, trao đổi thông tin nhanh.</li>
+                </ul>
+            </section>
+
+            <!-- CHI TIẾT CÁC THÁCH THỨC VÀ GIẢI PHÁP -->
+            <section>
+                <h2>2. Các thách thức thực tế và Giải pháp xử lý cá nhân</h2>
+
+                <!-- Thách thức 1 -->
+                <div class="challenge-card messenger-task">
+                    <h3>Thách thức 1: Hiện tượng "Trôi thông tin" và sự mất tập trung trên Messenger</h3>
+                    <p><strong>Bối cảnh & Phân tích:</strong> Messenger có độ phản hồi nhanh nhưng thiếu tính năng phân luồng công việc thành các kênh riêng biệt như Slack hay Discord. Khi nhóm thảo luận, các tin nhắn tán gẫu, ý kiến cá nhân và các thông báo quan trọng về deadline, link tài liệu bị trộn lẫn vào nhau. Nếu không trực tuyến liên tục, việc lội lại hàng trăm tin nhắn để tìm liên kết tài liệu cực kỳ mất thời gian, dẫn đến nguy cơ bỏ sót thông tin quan trọng.</p>
+                    <p><strong>Giải pháp xử lý cá nhân:</strong> Chủ động đề xuất và thiết lập quy tắc "Giao tiếp có cấu trúc" cho nhóm:</p>
+                    <ul>
+                        <li>Tận dụng tính năng "Ghim tin nhắn" (Pin) để lưu lại các thông báo quan trọng nhất (link bảng Trello, link Repo GitHub, link Google Docs).</li>
+                        <li>Áp dụng quy tắc tag tên kèm từ khóa hành động rõ ràng: <code>@[Tên_Thành_Viên] + [CẦN XỬ LÝ] + [Hạn chót]</code>.</li>
+                        <li>Yêu cầu nhóm sử dụng tính năng "Trả lời" (Reply) trực tiếp vào tin nhắn cũ để tạo sự liền mạch, tránh nhắn tràn lan gây loãng phòng chat.</li>
+                    </ul>
+                </div>
+
+                <!-- Thách thức 2 -->
+                <div class="challenge-card trello-task">
+                    <h3>Thách thức 2: Sự "Trễ Deadline ngầm" và thiếu đồng bộ trạng thái trên Trello</h3>
+                    <p><strong>Bối cảnh & Phân tích:</strong> Mặc dù nhóm thống nhất quy trình trên Trello với các cột To-Do, In Progress, Done, nhưng một số thành viên có thói quen làm việc độc lập và "quên" cập nhật trạng thái thẻ tác vụ. Họ tiến hành làm bài nhưng trên Trello thẻ vẫn nằm ở cột To-Do. Điều này khiến tôi hoàn toàn bị động khi cần lấy kết quả phần việc của họ để làm đầu vào cho phần việc của mình vì không biết họ đã bắt đầu làm hay chưa.</p>
+                    <p><strong>Giải pháp xử lý cá nhân:</strong> Áp dụng cơ chế "Cập nhật chủ động và Tương tác chéo" (Cross-checking) trên Trello với tần suất 3 lần/tuần:</p>
+                    <ul>
+                        <li>Vào mỗi đầu ngày làm việc, chủ động truy cập Trello để kiểm tra các đầu việc liên quan trực tiếp đến mình.</li>
+                        <li>Nếu phát hiện tác vụ của đồng đội sắp đến hạn nhưng chưa đổi trạng thái, trực tiếp để lại Bình luận (Comment) trong thẻ Trello đó, tag tên họ để hỏi thăm tiến độ và đưa ra lời đề nghị hỗ trợ <em>(Ví dụ: "Mình thấy phần nội dung của bạn còn 1 ngày, cần mình phụ tìm tài liệu gì không để kịp đẩy lên GitHub?")</em>. Việc này giúp thúc đẩy tinh thần tự giác mà không gây áp lực tiêu cực.</li>
+                    </ul>
+                </div>
+
+                <!-- Thách thức 3 -->
+                <div class="challenge-card git-task">
+                    <h3>Thách thức 3: Xung đột mã nguồn (Merge Conflicts) và quản lý phiên bản văn bản</h3>
+                    <p><strong>Bối cảnh & Phân tích:</strong> Thách thức lớn xuất hiện khi sử dụng kết hợp Google Docs (làm báo cáo) và GitHub (lưu trữ mã nguồn). Trên Google Docs, nhiều người cùng sửa trực tiếp (Editing) dễ dẫn đến việc ghi đè, xóa nhầm ý tưởng của nhau. Trên GitHub, nếu hai thành viên cùng chỉnh sửa một tệp tin trên cùng một nhánh (Branch) rồi đẩy lên (Push) cùng lúc, hiện tượng Merge Conflict sẽ xảy ra, có nguy cơ làm lỗi toàn bộ mã nguồn.</p>
+                    <p><strong>Giải pháp xử lý cá nhân:</strong> Đứng ra chuẩn hóa quy trình quản lý phiên bản nghiêm ngặt trên cả hai công cụ:</p>
+                    <ul>
+                        <li><strong>Đối với Google Docs:</strong> Yêu cầu các thành viên chuyển sang chế độ "Đề xuất" (Suggesting) và dùng tính năng Nhận xét (Comment) khi muốn sửa nội dung của người khác. Bản thân luôn áp dụng cách này để đồng đội duyệt trước khi tích hợp vào văn bản chính.</li>
+                        <li><strong>Đối với GitHub (Quản lý tài nguyên nâng cao):</strong> Thiết lập cấu trúc thư mục logic nhiều cấp (ví dụ: <code>src/</code>, <code>docs/</code>, <code>assets/</code>). Đưa ra quy định đặt tên file chuẩn chỉnh: <code>[MãGiaiĐoạn]_[TênFile]_[PhiênBản]</code>. Hướng dẫn nhóm không push trực tiếp lên nhánh <code>main</code>. Bản thân tạo một nhánh riêng là <code>feature/NguyenVanA</code> để làm việc cá nhân, sau khi hoàn thiện sẽ tạo Pull Request (PR) và gắn tag thành viên khác vào rà soát (Review) trước khi merge vào nhánh chính để triệt tiêu rủi ro mất dữ liệu.</li>
+                    </ul>
+                    <pdf-viewer src="../resource/week-4/info.pdf"></pdf-viewer>
+                </div>
+            </section>
+        </div>
+    </my-portfolio-box>
+</template>

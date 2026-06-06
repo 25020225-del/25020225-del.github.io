@@ -1,0 +1,34 @@
+/* --- ÁP DỤNG RIÊNG CHO CÁC KHU VỰC CUỘN (Như .grid-item) --- */
+
+.grid-item {
+    /* ... giữ nguyên các thuộc tính cũ của bạn ... */
+    
+    /* Mặc định: Giấu thanh cuộn trên Firefox và IE */
+    scrollbar-width: none; 
+}
+
+/* Mặc định: Giấu thanh cuộn trên Chrome, Safari, Edge */
+.grid-item::-webkit-scrollbar {
+    width: 6px; /* Giảm xuống chỉ còn 6px cho siêu mảnh */
+    background: transparent;
+}
+.grid-item::-webkit-scrollbar-thumb {
+    background: transparent; /* Ban đầu cho tàng hình luôn */
+    border-radius: 10px;
+}
+
+/* --- KHI RÊ CHUỘT VÀO BOX: THANH CUỘN MỚI THƠ MỘNG HIỆN LÊN --- */
+.grid-item:hover {
+    scrollbar-width: thin; /* Hiện lại trên Firefox */
+    scrollbar-color: rgba(39, 49, 51, 0.2) transparent;
+}
+
+.grid-item:hover::-webkit-scrollbar-thumb {
+    /* Hiện lên một đường chỉ màu xám đá mờ, trùng với màu border (rgb(39, 49, 51)) của bạn */
+    background: rgba(39, 49, 51, 0.2); 
+}
+
+/* Khi người dùng nhấn giữ vào thanh cuộn để kéo */
+.grid-item::-webkit-scrollbar-thumb:active {
+    background: rgba(39, 49, 51, 0.5); /* Đậm lên một chút để định vị */
+}

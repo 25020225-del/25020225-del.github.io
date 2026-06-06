@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Ops+One&family=Bungee&family=Kablammo&family=Paytone+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 1. THÊM VÀO: Bắt buộc html và body phải chiếm hết 100% chiều cao màn hình */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: rgb(45, 56, 59);
+    padding: 10px; /* Thay vì dùng margin, ta dùng padding để tạo khoảng cách với rìa màn hình mà không làm lệch chiều cao vh */
+}
+
+h1, h2,h3,h4,h5,h6{
+    font-family: "Bungee", sans-serif;
+}
+p {
+    font-family: "Roboto", sans-serif;
+}
+
+.gridd {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 10px;
+    /* Sử dụng calc để trừ đi 20px padding (trên 10px + dưới 10px) của body, giúp box khít khịt đáy */
+    height: calc(100vh - 20px); 
+}
+
+.grid-item {
+    border: 3px solid;
+    border-color: rgb(39, 49, 51);
+    border-radius: 15px;
+    padding: 10px;
+    
+    /* THÊM VÀO: Đảm bảo các box con cũng tự động kéo giãn theo chiều cao của Grid cha */
+    height: 100%; 
+    box-sizing: border-box; /* Giúp tính toán kích thước border không bị lố chiều cao */
+    overflow-y: auto;       /* Phòng hờ nếu nội dung bài học quá dài thì cái box tự sinh thanh cuộn riêng */
+}
+.tree-menu, .tree-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 20px; /* Tạo khoảng cách thụt lề cho menu con */
+    position: relative;
+}
+
+/* Định dạng chung cho mỗi dòng chữ trong menu */
+.tree-menu li {
+    margin: 0;
+    padding: 6px 0 6px 15px; /* Tạo khoảng trống để chèn đường kẻ thẳng */
+    position: relative;
+    color: rgb(60, 75, 80);
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+
+/* 1. VẼ ĐƯỜNG DỌC (Nối các mục đồng cấp với nhau) */
+.tree-menu li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid rgb(150, 160, 165); /* Độ dày và màu của nét dọc */
+}
+
+/* 2. VẼ ĐƯỜNG NGANG (Nhánh đâm vào từng thư mục/bài viết) */
+.tree-menu li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px; /* Căn chỉnh cho đường ngang nằm ngay giữa dòng chữ */
+    width: 10px; /* Chiều dài của nhánh đâm ngang */
+    border-top: 1px solid rgb(150, 160, 165); /* Độ dày và màu của nét ngang */
+}
+
+/* 3. XỬ LÝ ĐOẠN ĐUÔI: Phần tử cuối cùng của danh sách sẽ không kéo dài đường dọc xuống nữa */
+.tree-menu li:last-child:before {
+    height: 15px; /* Giới hạn đường dọc chỉ đi xuống đến ngang nhánh rẽ cuối cùng là dừng */
+    bottom: auto;
+}
+
+/* Định dạng một chút cho các thẻ p nằm trong menu để không bị nhảy dòng */
+.tree-menu p {
+    display: inline;
+    margin: 0;
+}
+
+#main-view-controller {
+    padding: 8% 20% 8% 20%; 
+}
+
+
+
+.gridd a, .tree-menu li a {
+    color: #5c715e; /* Màu xanh lá bọc rêu nhẹ nhàng, thơ mộng */
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.4s ease;
+}
+
+/* Đổi màu chữ khi hover nhẹ nhàng */
+.gridd a:hover, .tree-menu li a:hover {
+    color: #b8a187; /* Màu be/nâu sữa ấm áp */
+}
+
+/* Vẽ một đường gạch chân ẩn ẩn dưới link */
+.gridd a::after, .tree-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0); /* Ban đầu thu nhỏ về 0 (biến mất) */
+    height: 1px;         /* Đường kẻ siêu mảnh */
+    bottom: 0;
+    left: 0;
+    background-color: #b8a187;
+    transform-origin: bottom center; /* Tâm loang ra từ giữa */
+    transition: transform 0.4s ease-out; /* Chuyển động mượt mà */
+}
+
+/* Khi hover, đường gạch chân sẽ nở ra 100% chiều dài */
+.gridd a:hover::after, .tree-menu li a:hover::after {
+    transform: scaleX(1);
+}

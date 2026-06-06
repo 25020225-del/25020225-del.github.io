@@ -1,0 +1,243 @@
+<template>
+    <style>
+        /* Khung chứa nội dung chính */
+        .content-portfolio {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Tiêu đề chính và tiêu đề phụ */
+        .content-portfolio h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 28px;
+            margin-bottom: 16px;
+        }
+
+        .content-portfolio h3 {
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* Định dạng văn bản và danh sách */
+        .content-portfolio p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .content-portfolio ul, .content-portfolio ol {
+            padding-left: 22px;
+            margin-bottom: 16px;
+        }
+
+        .content-portfolio li {
+            margin-bottom: 8px;
+        }
+
+        /* Khung trích dẫn prompt hoặc ghi chú */
+        .prompt-block {
+            background-color: #f1f2f6;
+            border-left: 4px solid #7f8c8d;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Khung phân tích các giai đoạn tích hợp */
+        .stage-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .stage-box.text-stage { border-top: 4px solid #3498db; }
+        .stage-box.image-stage { border-top: 4px solid #2ecc71; }
+        .stage-box.design-stage { border-top: 4px solid #9b59b6; }
+
+        /* Định dạng bảng đối sánh công cụ */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .comparison-table th {
+            background-color: #34495e;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Thẻ highlight từ khóa */
+        .content-portfolio code {
+            background-color: #f1f2f6;
+            color: #c0392b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+
+        .content-portfolio strong {
+            color: #1a252f;
+        }
+    </style>
+
+    <my-portfolio-box>
+        <h1 slot="title">Bài tập buổi 5: Báo cáo nghiên cứu và ứng dụng AI trong sáng tạo nội dung số</h1>
+        <div slot="content" class="content-portfolio">
+            
+            <p><strong>Dự án:</strong> Xây dựng chiến dịch nội dung số "Sống Xanh Cùng Thế Hệ Z"</p>
+            <p><strong>Loại hình sản phẩm:</strong> Bài viết chuyên sâu + Bộ Infographic truyền thông</p>
+            <p><strong>Người thực hiện:</strong> Nigga</p>
+
+            <!-- PHẦN I -->
+            <section>
+                <h2>I. Tổng quan dự án và lựa chọn công cụ</h2>
+                <h3>1. Giới thiệu dự án</h3>
+                <p>Dự án "Sống Xanh Cùng Thế Hệ Z" là một chiến dịch nội dung số nhằm nâng cao nhận thức của người trẻ về lối sống bền vững (vấn đề rác thải nhựa và thời trang nhanh). Sản phẩm đầu ra bao gồm:</p>
+                <ul>
+                    <li>01 Bài viết chuyên sâu (Long-form) đăng tải trên nền tảng mạng xã hội.</li>
+                    <li>01 Bộ Infographic (3 ảnh) tóm tắt các số liệu cốt lõi.</li>
+                </ul>
+
+                <h3>2. Các công cụ AI tạo sinh được sử dụng</h3>
+                <p>Để tối ưu hóa quy trình, dự án tích hợp 3 công cụ AI hàng đầu thuộc 3 nhóm chức năng:</p>
+                <ul>
+                    <li><strong>AI tạo văn bản (Google Gemini):</strong> Hỗ trợ nghiên cứu, lên khung ý tưởng và viết bản nháp.</li>
+                    <li><strong>AI tạo hình ảnh (Gemini):</strong> Tạo các tài nguyên đồ họa độc bản, chất lượng cao làm phôi thiết kế.</li>
+                    <li><strong>AI hỗ trợ thiết kế (Canva AI / Adobe Firefly):</strong> Xử lý bố cục, phối màu, mở rộng canvas và đồng bộ hóa định dạng thiết kế.</li>
+                </ul>
+            </section>
+
+            <!-- PHẦN II -->
+            <section>
+                <h2>II. Chi tiết quá trình sử dụng AI và tích hợp sáng tạo</h2>
+
+                <!-- Giai đoạn 1 -->
+                <div class="stage-box text-stage">
+                    <h3>Giai đoạn 1: Sáng tạo nội dung văn bản (Google Gemini)</h3>
+                    <p><strong>Mục tiêu:</strong> Thu thập số liệu về rác thải nhựa năm 2025-2026 và lập dàn ý bài viết chuyên sâu.</p>
+                    
+                    <div class="prompt-block">
+                        <strong>Prompt 1 (Thiết lập bối cảnh):</strong> "Bạn là một chuyên gia truyền thông môi trường. Hãy xây dựng một dàn ý chi tiết cho bài viết long-form hướng đến Gen Z với chủ đề 'Lối sống xanh không khó như bạn nghĩ'. Tông giọng gần gũi, mang tính thúc đẩy, không giáo điều."
+                    </div>
+                    <p><em>Kết quả từ AI:</em> Gemini trả ra dàn ý 4 phần khá mạch lạc. Tuy nhiên, các số liệu đưa ra mang tính chung chung (ví dụ: "hàng triệu tấn rác mỗi năm").</p>
+                    
+                    <div class="prompt-block">
+                        <strong>Prompt 2 (Sửa đổi & Đào sâu):</strong> "Hãy bổ sung các số liệu thống kê cụ thể, cập nhật mới nhất về hành vi tiêu dùng xanh của Gen Z tại Đông Nam Á vào phần 2 của dàn ý trên."
+                    </div>
+                    <p><strong>Cách chỉnh sửa & Tích hợp cá nhân (Đóng góp >50%):</strong> Lấy bộ khung của Gemini, tôi tiến hành kiểm tra chéo (fact-check) lại toàn bộ số liệu. Tôi nhận thấy AI có xu hướng tự "bịa" ra một vài tỷ lệ phần trăm (ảo giác AI). Tôi đã chủ động thay thế bằng số liệu thực tế từ báo cáo chính thống của WWF, đồng thời viết lại 60% câu chữ để chèn vào các từ lóng (slang) thịnh hành của Gen Z Việt Nam giúp văn phong tự nhiên hơn.</p>
+                </div>
+
+                <!-- Giai đoạn 2 -->
+                <div class="stage-box image-stage">
+                    <h3>Giai đoạn 2: Tạo tài nguyên hình ảnh (Midjourney/Gemini)</h3>
+                    <p><strong>Mục tiêu:</strong> Tạo hình ảnh minh họa phong cách 3D đất sét để chèn vào Infographic truyền thông.</p>
+                    
+                    <div class="prompt-block">
+                        <strong>Prompt 1:</strong> "/imagine a cute 3D character, Gen Z style, holding a reusable water bottle, surrounded by green plants, claymation style, pastel colors, white background --v 6.0"
+                    </div>
+                    <p><em>Kết quả từ AI:</em> Hình ảnh đẹp, đúng phong cách đất sét (claymation) nhưng chi tiết nhân vật bị lỗi dị tật ở bàn tay (6 ngón) và bình nước trông giống một khối hình trụ không rõ ràng.</p>
+                    
+                    <div class="prompt-block">
+                        <strong>Prompt 2 (Sửa lỗi bằng kỹ thuật nâng cao):</strong> "/imagine a cute 3D character, Gen Z avatar, holding a clear eco-friendly glass water bottle, perfect anatomy, hands correctly rendered, claymation style, vibrant pastel green and cream colors, clean isolated white background --v 6.0 --style raw"
+                    </div>
+                    <p><strong>Cách chỉnh sửa & Tích hợp cá nhân:</strong> Sau khi tải ảnh về và tách nền, tôi nhận thấy màu sắc gốc quá rực rỡ, không khớp với bộ nhận diện thương hiệu dịu mát của chiến dịch. Tôi đã đưa ảnh vào Gimp để chỉnh lại độ bão hòa (Saturation) và vẽ kỹ thuật thủ công lại các chi tiết ngón tay bị lỗi cấu trúc.</p>
+                </div>
+
+                <!-- Giai đoạn 3 -->
+                <div class="stage-box design-stage">
+                    <h3>Giai đoạn 3: Thiết kế và Hoàn thiện (Adobe Firefly & Canva AI)</h3>
+                    <p><strong>Mục tiêu:</strong> Sắp xếp bố cục bản vẽ Infographic và mở rộng phông nền banner.</p>
+                    <ul>
+                        <li><strong>Sử dụng Generative Fill (Adobe Firefly):</strong> Đưa hình ảnh nhân vật vào phông nền ngang để làm banner. Sử dụng câu lệnh <code>"Extend the background with pastel green abstract geometric shapes"</code>. Firefly làm rất tốt việc hòa trộn phần mở rộng với ảnh gốc tự nhiên.</li>
+                        <li><strong>Tích hợp trên Canva:</strong> Sử dụng tính năng "Magic Switch" để tự động chuyển đổi kích thước từ Infographic dọc sang kích thước bài đăng vuông trên Instagram.</li>
+                    </ul>
+                    <p><strong>Đóng góp cá nhân:</strong> AI chỉ hỗ trợ tạo nền và đổi kích thước cơ bản. Toàn bộ phần sắp xếp phân cấp thị giác (Visual Hierarchy), lựa chọn font chữ tiếng Việt (tránh lỗi hiển thị/lỗi font), và đặt các khối văn bản chứa số liệu đều do tôi tự tay thiết kế thủ công 100% để đảm bảo tính thẩm mỹ chuyên nghiệp.</p>
+                </div>
+            </section>
+
+            <!-- PHẦN III -->
+            <section>
+                <h2>III. So sánh và phân tích chuyên sâu các công cụ AI</h2>
+                <p>Dưới đây là bảng đối sánh hiệu quả thực tế của các công cụ dựa trên trải nghiệm trực tiếp trong dự án:</p>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>Google Gemini (Văn bản)</th>
+                            <th>Gemini / Midjourney (Hình ảnh)</th>
+                            <th>Adobe Firefly (Thiết kế/Chỉnh sửa)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Điểm mạnh lớn nhất</strong></td>
+                            <td>Tốc độ tư duy logic tốt, khả năng lên cấu trúc và phân loại thông tin cực nhanh.</td>
+                            <td>Khả năng nghệ thuật xuất sắc, tạo ra các hình ảnh độc bản có tính thẩm mỹ rất cao.</td>
+                            <td>Khả năng thấu hiểu bối cảnh của ảnh gốc để mở rộng hoặc bù đắp chi tiết rất tự nhiên.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Điểm hạn chế</strong></td>
+                            <td>Hay gặp hiện tượng "ảo giác" (bịa số liệu); hành văn đôi khi còn rập khuôn, thiếu cảm xúc thực tế.</td>
+                            <td>Khó kiểm soát các chi tiết nhỏ (ngón tay, chữ viết trong ảnh); không có tính nhất quán cao giữa các lần tạo.</td>
+                            <td>Khản năng sáng tạo hình ảnh từ số 0 (Text-to-Image) chưa có độ nghệ thuật sâu bằng các mô hình chuyên biệt.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mức độ phụ thuộc</strong></td>
+                            <td>Thấp (Chỉ lấy ý tưởng, con người phải nghiên cứu và viết lại).</td>
+                            <td>Trung bình (Tạo phôi ảnh thô, con người phải xử lý hậu kỳ).</td>
+                            <td>Thấp (Chỉ dùng hỗ trợ mở rộng canvas và xử lý phông nền).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Nhận định sâu sắc:</strong> Quy trình sáng tạo truyền thống thường tốn 70% thời gian cho việc "động não" (brainstorming) và tìm kiếm tư liệu thô, 30% cho việc mài dũa sản phẩm. Khi có sự tham gia của hệ thống AI liên hoàn, quy trình này đảo ngược hoàn toàn: Tôi chỉ mất 10% thời gian để có bộ khung ý tưởng và nguyên liệu thô, dành trọn 90% thời gian còn lại để đóng vai trò một <strong>"Giám đốc Sáng tạo" (Creative Director)</strong> - tập trung vào việc tinh chỉnh, thổi cảm xúc cá nhân và tối ưu hóa trải nghiệm người dùng.</p>
+            </section>
+
+            <!-- PHẦN IV -->
+            <section>
+                <h2>IV. Phân tích vai trò của AI và các vấn đề đạo đức</h2>
+                
+                <h3>1. Tác động của AI đối với quy trình sáng tạo cá nhân</h3>
+                <p>AI đã chuyển đổi vai trò của tôi từ một "người thợ thực thi" (Executor) trở thành một "người điều phối" (Curator). Sự thay đổi lớn nhất nằm ở khả năng thử nghiệm nhanh. Thay vì mất cả ngày để vẽ ra một moodboard (bảng tâm trạng hình ảnh), AI cho phép tôi thấy ngay kết quả trực quan trong 30 giây. Điều này giải phóng tư duy, giúp tôi dũng cảm thử nghiệm những phong cách nghệ thuật táo bạo hơn.</p>
+
+                <h3>2. Các vấn đề đạo đức cần cân nhắc</h3>
+                <ul>
+                    <li><strong>Vấn đề bản quyền dữ liệu (Copyright):</strong> Các mô hình AI được huấn luyện trên hàng tỷ bức ảnh của các họa sĩ thực thụ mà không có sự đồng thuận rõ ràng của họ. Khi tôi sử dụng phong cách "Claymation", tôi hiểu rằng mình đang gián tiếp thừa hưởng chất xám từ những nghệ sĩ đi trước. Do đó, sản phẩm cuối cùng của tôi bắt buộc phải có sự biến đổi mạnh mẽ (Transformative use), tuyệt đối không copy nguyên bản sản phẩm của AI để thương mại hóa.</li>
+                    <li><strong>Sự thiên vị và định kiến (Bias):</strong> Khi prompt từ khóa "Gen Z", AI ban đầu hướng rất nhiều đến lối sống phương Tây thượng lưu. Điều này đòi hỏi người sáng tạo phải chủ động đưa các từ khóa mang tính bản địa (Địa phương hóa - Localization) để tránh việc nội dung bị rập khuôn văn hóa toàn cầu hóa, đánh mất bản sắc Việt Nam.</li>
+                    <li><strong>Tính minh bạch (Transparency):</strong> Người xem có quyền được biết sản phẩm họ đang tiếp nhận có sự can thiệp của máy móc hay không. Trong báo cáo và sản phẩm truyền thông cuối cùng, tôi chọn giải pháp gắn một dòng ghi chú nhỏ (Footnote): <em>"Hình ảnh minh họa có sự hỗ trợ của trí tuệ nhân tạo (AI-assisted)"</em> nhằm tôn trọng độc giả.</li>
+                </ul>
+            </section>
+
+            <!-- PHẦN V -->
+            <section>
+                <h2>V. Sản phẩm cuối cùng và minh họa quá trình</h2>
+                <p><em>(Các tệp hình ảnh đính kèm và link bài đăng sản phẩm được lưu trữ nội bộ theo quy định dự án)</em></p>
+            </section>
+            
+            <pdf-viewer src="../resource/week-5/info.pdf"></pdf-viewer>
+        </div>
+    </my-portfolio-box>
+</template>

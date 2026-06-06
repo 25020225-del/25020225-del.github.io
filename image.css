@@ -1,0 +1,74 @@
+::slotted(img), .grid-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 16px;
+    
+    /* Tạo một đường viền trắng mờ bao quanh ảnh trông như một chiếc khung kính */
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    
+    /* Bóng đổ dịu mắt */
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.02),
+        0 10px 20px rgba(45, 56, 59, 0.08);
+        
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+::slotted(img:hover), .grid-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 6px 8px rgba(0, 0, 0, 0.04),
+        0 15px 30px rgba(45, 56, 59, 0.12);
+}
+
+.lightbox {
+    display: none; /* Mặc định là ẩn đi */
+    position: fixed;
+    z-index: 9999; /* Luôn nằm trên cùng tất cả mọi thứ */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 49, 51, 0.85); /* Màu xám đá mờ ảo của bạn */
+    backdrop-filter: blur(8px); /* Làm mờ hậu cảnh phía sau nhìn cực thơ mộng */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out; /* Hiện con trỏ chuột kính lúp thu nhỏ */
+}
+
+/* Bức ảnh khi được phóng to */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    
+    /* --- THÊM DÒNG NÀY ĐỂ KHI LĂN CHUỘT ẢNH ZOOM MƯỢT HƠN --- */
+    transition: transform 0.1s ease-out; 
+    
+    /* Đảm bảo tâm phóng to nằm chính giữa bức ảnh */
+    transform-origin: center center; 
+}
+
+/* Nút bấm tắt (dấu X) ở góc trên */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.lightbox-close:hover {
+    color: #b8a187; /* Đổi sang màu be khi hover */
+}
+
+/* Khai báo animation phóng to */
+@keyframes zoomEffect {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

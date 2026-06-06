@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="scroolbar.css">
+    <link rel="stylesheet" href="image.css">
+    <script src="code.js" defer></script>
+    <script src="code2.js" defer></script>
+    <title>my portfolio</title>
+</head>
+<body>
+    <div class="gridd">
+        <div class="grid-item">
+            <h2>MY TREE</h2>
+            <ul class="tree-menu">
+                <li onclick="returnToMain()"><p>📄 My portfolio</p></li>
+                <li>
+                    <p>📁 My project</p>
+                    <ul class="tree-menu ">
+                        <li onclick="toWeek1()">📄 Bài 1</li>
+                        <li onclick="toWeek2()">📄 Bài 2</li>
+                        <li onclick="toWeek3()">📄 Bài 3</li>
+                        <li onclick="toWeek4()">📄 Bài 4</li>
+                        <li onclick="toWeek5()">📄 Bài 5</li>
+                        <li onclick="toWeek6()">📄 Bài 6</li>
+                    </ul>
+                </li>
+                <li onclick="returnToEnd()">📄 Kết thúc</li>
+            </ul>
+        </div>
+        <div class="grid-item" id="main-view-controller">
+            
+        </div>
+    </div>
+
+</body>
+<div id="image-lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+</html>

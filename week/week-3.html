@@ -1,0 +1,280 @@
+<template>
+    <style>
+        /* Khung chứa nội dung chính */
+        .ai-portfolio {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Tiêu đề chính và tiêu đề phụ */
+        .ai-portfolio h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .ai-portfolio h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        /* Định dạng danh sách và văn bản */
+        .ai-portfolio ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .ai-portfolio li {
+            margin-bottom: 8px;
+        }
+
+        .ai-portfolio p {
+            margin-bottom: 16px;
+        }
+
+        /* Khung chứa các tác vụ khảo sát */
+        .task-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .task-card.summary-task {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        .task-card.summary-task h3 {
+            color: #2980b9;
+        }
+
+        .task-card.explain-task {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2ecc71;
+        }
+        .task-card.explain-task h3 {
+            color: #27ae60;
+        }
+
+        .task-card.quiz-task {
+            background-color: #f8f9fa;
+            border-left: 4px solid #9b59b6;
+        }
+        .task-card.quiz-task h3 {
+            color: #8e44ad;
+        }
+
+        /* Định dạng bảng phân tích kết quả */
+        .ai-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 24px;
+        }
+
+        .ai-table th {
+            background-color: #34495e;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .ai-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        /* Các dòng trạng thái đặc biệt trong bảng */
+        .row-basic {
+            color: #7f8c8d;
+        }
+        .td-label {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+        .row-improved {
+            color: #2c3e50;
+        }
+        .row-advanced {
+            color: #27ae60;
+            background-color: #f4fbf7;
+        }
+        .td-advanced-label {
+            font-weight: bold;
+            background-color: #e8f4f8;
+            color: #2c3e50;
+        }
+
+        /* Khung lý thuyết và nguyên tắc cốt lõi */
+        .theory-box {
+            background-color: #eef2f7;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .theory-box ol {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+
+        /* Lưới hiển thị 5 nguyên tắc vàng */
+        .rules-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .rule-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Trạng thái ví dụ Đúng/Sai */
+        .bad-prompt {
+            color: #c0392b;
+        }
+
+        .good-prompt {
+            color: #27ae60;
+        }
+
+        .ai-portfolio code {
+            background-color: #eaeded;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: Courier, monospace;
+        }
+    </style>
+
+    <my-portfolio-box>
+        <h1 slot="title">Bài tập buổi 3: Sử dụng AI đúng cách</h1>
+        <div slot="content" class="ai-portfolio">
+            
+            <!-- PHẦN 1: BÀI TẬP KHẢO SÁT CÁC CẤP ĐỘ PROMPT -->
+            <section>
+                <h2>1. Khảo sát Thử nghiệm & Thiết kế Prompt</h2>
+                
+                <!-- Tác vụ 1 -->
+                <div class="task-card summary-task">
+                    <h3>Tác vụ 1: Tóm tắt một tài liệu học thuật (Giáo trình AI)</h3>
+                    <ul>
+                        <li><strong>Prompt cơ bản:</strong> Giải thích tài liệu này nói những gì + đính kèm tên hoặc link tài liệu.</li>
+                        <li><strong>Prompt cải tiến:</strong> Hãy tóm tắt văn bản học thuật này thành một đoạn văn bao gồm 200 - 300 từ. Tập trung vào những ý chính, bao gồm phương pháp nghiên cứu, áp dụng vào thực tiễn. Yêu cầu sử dụng ngôn ngữ giản dị, truyền đạt nội dung đúng ý, cú pháp đầy đủ, có gạch xuống dòng.</li>
+                        <li><strong>Prompt nâng cao:</strong> Bạn là một người chuyên nghiên cứu về trí tuệ nhân tạo, một người cố vấn, truyền đạt đầy kinh nghiệm. Hãy giúp tôi tóm tắt bài tài liệu theo hướng sau: Tóm tắt tổng quan (1 - 2 câu); Các luận điểm chính (Dạng danh sách gạch đầu dòng); Giá trị cốt lõi, bài học. <em>(Lưu ý: Ưu tiên sử dụng NotebookLM cho tài liệu dài để tránh hallucination)</em>.</li>
+                    </ul>
+                </div>
+
+                <!-- Tác vụ 2 -->
+                <div class="task-card explain-task">
+                    <h3>Tác vụ 2: Giải thích khái niệm phức tạp (Generative AI)</h3>
+                    <ul>
+                        <li><strong>Prompt cơ bản:</strong> Giải thích cho tôi khái niệm generative AI.</li>
+                        <li><strong>Prompt cải tiến:</strong> Giả sử người mà bạn đang trò chuyện là một học sinh cấp 2 tò mò về trí tuệ nhân tạo tạo sinh, hãy giải thích khái niệm này một cách dễ hiểu, cung cấp ví dụ thực tế về đời sống và môi trường xung quanh. Tóm tắt lại bản chất khái niệm trong 1 câu ngắn gọn cuối bài.</li>
+                        <li><strong>Prompt nâng cao:</strong> Bạn là một giáo sư đại học có tài diễn đạt cực kỳ dễ hiểu, nổi tiếng with phương pháp "Giải thích như tôi lên 5 tuổi" (ELI5). Hãy giải thích khái niệm generative AI cho một người mới bắt đầu học. Áp dụng phương pháp ẩn dụ/so sánh thực tế (Mẫu: Ẩn dụ điện toán đám mây như thuê kệ sách tại thư viện số), tránh thuật ngữ nặng nề và cô đọng bản chất trong 1 câu cuối bài.</li>
+                    </ul>
+                </div>
+
+                <!-- Tác vụ 3 -->
+                <div class="task-card quiz-task">
+                    <h3>Tác vụ 3: Tạo bộ câu hỏi ôn tập (Tổng quan về AI)</h3>
+                    <ul>
+                        <li><strong>Prompt cơ bản:</strong> Tạo cho tôi một câu hỏi ôn tập liên quan đến chủ đề trí tuệ nhân tạo.</li>
+                        <li><strong>Prompt cải tiến:</strong> Tạo cho tôi một bộ câu hỏi gồm 20 câu (10 câu trắc nghiệm ABCD, 10 câu đúng/sai) liên quan đến trí tuệ nhân tạo và các khái niệm liên quan.</li>
+                        <li><strong>Prompt nâng cao:</strong> Bạn là một chuyên gia trong giáo dục, xây dựng chương trình thi cử và đào tạo, đồng thời là một chuyên gia nghiên cứu mảng AI. Hãy thiết kế một bộ câu hỏi ôn tập toàn diện theo Thang đo Bloom. Cấu trúc gồm: Cấp độ Nhớ & Hiểu (3 câu trắc nghiệm), Cấp độ Áp dụng & Phân tích (2 câu tình huống/tính toán ngắn), Cấp độ Đánh giá & Sáng tạo (1 câu tự luận mở). Định dạng đầu ra rõ ràng: PHẦN 1: CÂU HỎI, PHẦN 2: ĐÁP ÁN & GIẢI THÍCH CHI TIẾT.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- PHẦN 2: BẢNG SO SÁNH KẾT QUẢ THỬ NGHIỆM -->
+            <section>
+                <h2>2. Bảng phân tích kết quả thử nghiệm (Trên Gemini)</h2>
+                <table class="ai-table">
+                    <thead>
+                        <tr>
+                            <th>Mức độ</th>
+                            <th>Nhiệm vụ 1: Tóm tắt</th>
+                            <th>Nhiệm vụ 2: Giải thích khái niệm</th>
+                            <th>Nhiệm vụ 3: Tạo câu hỏi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-basic">
+                            <td class="td-label">Prompt cơ bản</td>
+                            <td>• Ưu: Liệt kê tên chương, đề mục lớn.<br>• Nhược: Văn phong nghẹt từ chuyên ngành, quá dài (~600 từ), lặp ý (ảo giác nhẹ).</td>
+                            <td>• Ưu: Định nghĩa đúng mặt kỹ thuật.<br>• Nhược: Dùng từ nặng nề (mạng thần kinh, deep learning), khó hiểu, thiếu ví dụ thực tế.</td>
+                            <td>• Ưu: Tạo câu hỏi nhanh.<br>• Nhược: Ra đúng 1 câu (do từ ngữ trong prompt), quá dễ, thuần học vẹt, không có đáp án.</td>
+                        </tr>
+                        <tr class="row-improved">
+                            <td class="td-label">Prompt cải tiến</td>
+                            <td>• Ưu: Ép đúng dung lượng (~250 từ), thoáng ý, gạch đầu dòng rõ.<br>• Nhược: Quá tập trung lý thuyết, quên mất phần "áp dụng thực tiễn".</td>
+                            <td>• Ưu: Thay đổi tông giọng thành công, biết dùng ẩn dụ "cọ vẽ thần kỳ" cho học sinh cấp 2.<br>• Nhược: Câu tóm tắt cuối bài còn dài dòng, chưa cô đọng.</td>
+                            <td>• Ưu: Ra đủ số lượng 20 câu (10 trắc nghiệm, 10 đúng/sai).<br>• Nhược: Trùng lặp ý nhiều giữa các câu hỏi, không có phần giải thích đúng/sai.</td>
+                        </tr>
+                        <tr class="row-advanced">
+                            <td class="td-advanced-label">Prompt nâng cao</td>
+                            <td>• Ưu: Cấu trúc hoàn hảo (Tổng quan -> Luận điểm -> Bài học). Đóng vai cố vấn tốt, rút ra giá trị áp dụng cao.<br>• Nhược: Không có.</td>
+                            <td>• Ưu: Xuất sắc. Ẩn dụ thông minh (AI tạo ảnh như "đầu bếp robot" tự chế công thức từ món đã ăn). Không sót thuật ngữ khó.<br>• Nhược: Không có.</td>
+                            <td>• Ưu: Có chiều sâu tư duy rõ rệt nhờ Thang đo Bloom. Đáp án giải thích siêu chi tiết, chỉ ra bẫy nhiễu.<br>• Nhược: Đầu ra dài, tốn thời gian generate.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- PHẦN 3: LÝ THUYẾT & NGUYÊN TẮC KỸ THUẬT KỸ NĂNG PROMPT -->
+            <section>
+                <h2>3. Tư duy & Cấu trúc của một Prompt hoàn hảo</h2>
+                <p>Một prompt mạnh vượt trội hơn prompt yếu nhờ vào <strong>Độ rõ ràng, Tính cụ thể, Cách cung cấp Khung mẫu (Ví dụ)</strong> và định hướng <strong>Tư duy từng bước (Chain of Thought)</strong>.</p>
+                
+                <div class="theory-box">
+                    <h3>❖ 4 Thành phần cốt lõi (R-C-T-F):</h3>
+                    <ol>
+                        <li><strong>Vai trò (Role):</strong> Chỉ định "danh tính" chuyên gia cho AI <em>(Ví dụ: "Bạn là chuyên gia SEO tối ưu hóa", "Huấn luyện viên thể hình")</em>.</li>
+                        <li><strong>Bối cảnh (Context):</strong> Đưa ra thông tin nền tảng, lý do hoặc tình huống <em>(Ví dụ: "Tôi đang chuẩn bị ra mắt app học tiếng Anh cho trẻ em 5 tuổi...")</em>.</li>
+                        <li><strong>Nhiệm vụ (Task):</strong> Hành động cụ thể cần thực hiện bằng động từ mạnh <em>(Ví dụ: "Hãy lập kế hoạch nội dung", "Hãy viết email từ chối khéo")</em>.</li>
+                        <li><strong>Định dạng đầu ra (Format):</strong> Cách thức trình bày kết quả <em>(Ví dụ: "Trình bày dưới dạng bảng", "Giới hạn trong 200 từ")</em>.</li>
+                    </ol>
+                </div>
+
+                <h3>❖ 5 Nguyên tắc vàng khi viết Prompt:</h3>
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <strong>🧠 Nguyên tắc 1: Cụ thể hóa, tuyệt đối không mơ hồ</strong><br>
+                        <span class="bad-prompt">❌ Kém:</span> "Viết một bài văn ngắn về tình bạn."<br>
+                        <span class="good-prompt">✔️ Tốt:</span> "Viết một đoạn văn khoảng 150-200 từ kể về một kỷ niệm sâu sắc giữa hai người bạn thân, tông giọng xúc động."
+                    </div>
+                    
+                    <div class="rule-card">
+                        <strong>🧠 Nguyên tắc 2: Cung cấp ví dụ (Few-Shot Prompting)</strong><br>
+                        Nếu muốn AI viết theo phong cách hoặc cấu trúc đặc biệt, cách nhanh nhất là cho nó xem mẫu trước khi ra lệnh.
+                    </div>
+
+                    <div class="rule-card">
+                        <strong>🧠 Nguyên tắc 3: Khích lệ tư duy từng bước (Chain of Thought)</strong><br>
+                        Đối với bài toán logic, lập trình hay chiến lược, hãy dùng câu thần chú: <em>"Hãy suy nghĩ từng bước một trước khi đưa ra câu trả lời cuối cùng"</em> để giảm thiểu lỗi ảo giác.
+                    </div>
+
+                    <div class="rule-card">
+                        <strong>🧠 Nguyên tắc 4: Sử dụng các ký hiệu phân tách (Delimiters)</strong><br>
+                        Dùng các ký hiệu như <code>"""</code>, <code>---</code>, hoặc <code>&lt; &gt;</code> để ngăn cách rõ ràng giữa câu lệnh hướng dẫn và phần văn bản dữ liệu nạp vào.
+                    </div>
+
+                    <div class="rule-card">
+                        <strong>🧠 Nguyên tắc 5: Tập trung vào "Điều nên làm" thay vì "Điều cần tránh"</strong><br>
+                        <span class="bad-prompt">❌ Kém:</span> "Đừng viết bài này một cách nhàm chán và đừng dùng từ ngữ quá hàn lâm."<br>
+                        <span class="good-prompt">✔️ Tốt:</span> "Hãy viết bài này một cách sinh động, sử dụng các từ ngữ đơn giản, gần gũi với học sinh cấp 3."
+                    </div>
+                </div>
+            </section>
+            <pdf-viewer src="../resource/week-3/info.pdf"></pdf-viewer>
+        </div>
+    </my-portfolio-box>
+</template>

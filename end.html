@@ -1,0 +1,141 @@
+<template>
+    <style>
+        /* Khung chứa nội dung chính */
+        .summary-portfolio {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Tiêu đề chính và tiêu đề phụ */
+        .summary-portfolio h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        .summary-portfolio h3 {
+            color: #2980b9;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* Định dạng văn bản và danh sách */
+        .summary-portfolio p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .summary-portfolio ul {
+            padding-left: 22px;
+            margin-bottom: 16px;
+        }
+
+        .summary-portfolio li {
+            margin-bottom: 10px;
+        }
+
+        /* Khung phân tách khối nội dung tâm đắc / thách thức */
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+
+        .reflection-card {
+            padding: 16px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .reflection-card.highlights {
+            background-color: #f4fbf7;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .reflection-card.challenges {
+            background-color: #fffaf0;
+            border-left: 4px solid #e67e22;
+        }
+
+        /* Khung lời cảm ơn cuối trang */
+        .thank-you-box {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .thank-you-box h3 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .thank-you-box p {
+            text-align: center;
+            margin-bottom: 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Điểm nhấn chữ bôi đậm */
+        .summary-portfolio strong {
+            color: #1a252f;
+        }
+        
+        .thank-you-box strong {
+            color: #ffffff;
+        }
+    </style>
+
+    <my-portfolio-box>
+        <h1 slot="title">Trang Tổng Kết: Nhìn Lại Hành Trình Dự Án</h1>
+        <div slot="content" class="summary-portfolio">
+            
+            <section>
+                <h2>1. Trải nghiệm và Cảm nhận cá nhân</h2>
+                <p>Hành trình xây dựng và hoàn thiện chuỗi sản phẩm Portfolio này là một trải nghiệm vô cùng đặc biệt. Ban đầu, tôi đối mặt với các bài tập với tâm thế của một người thực thi kỹ thuật thuần túy. Tuy nhiên, qua từng buổi học, việc phải liên tục phối hợp nhóm, quản lý tiến độ dự án Web Đấu giá và nghiên cứu sâu về các mô hình GenAI đã giúp tôi thay đổi hoàn toàn tư duy làm việc.</p>
+                <p>Tôi nhận ra rằng một sản phẩm tốt không chỉ dừng lại ở những dòng code chạy mượt mà hay những đoạn văn đúng ngữ pháp, mà nó là sự giao thoa giữa <strong>tính kỷ luật trong quy trình</strong> và <strong>trách nhiệm đạo đức trong học thuật</strong>.</p>
+            </section>
+
+            <section>
+                <h2>2. Kiến thức và Kỹ năng quan trọng nhất đã học được</h2>
+                <ul>
+                    <li><strong>Làm chủ Kỹ thuật Prompt (Prompt Engineering):</strong> Từ việc viết câu lệnh ngây thơ, tôi đã thành thạo cấu trúc <code>R-C-T-F (Role - Context - Task - Format)</code> và các kỹ thuật nâng cao như Few-Shot hay Chain-of-Thought để điều khiển AI tối ưu, giảm thiểu hiện tượng ảo giác.</li>
+                    <li><strong>Quản lý dự án trực tuyến có cấu trúc:</strong> Biết cách biến áp lực công việc nhóm thành quy trình mượt mà thông qua việc chuẩn hóa luồng giao tiếp trên Messenger, quản trị tiến độ trực quan bằng Trello, và thiết lập cơ chế Pull Request nghiêm ngặt trên GitHub để triệt tiêu lỗi Merge Conflicts.</li>
+                    <li><strong>Tư duy Liêm chính học thuật (Ethical AI):</strong> Thấu hiểu sâu sắc ranh giới giữa việc sử dụng AI làm đòn bẩy hiệu suất với hành vi gian lận. Việc tuân thủ nghiêm ngặt hạn mức 15% của UET đã rèn cho tôi thói quen luôn kiểm tra phê phán và làm chủ 100% kiến thức mình nộp lên.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Điểm tâm đắc & Thách thức lớn nhất</h2>
+                
+                <div class="reflection-grid">
+                    <div class="reflection-card highlights">
+                        <h3>🌟 Điểm cảm thấy tâm đắc nhất</h3>
+                        <p>Điều tôi tự hào nhất là khả năng đóng vai trò <strong>"Giám đốc Sáng tạo" (Creative Director)</strong> trong các bài tập lớn. Tôi đã tối ưu hóa được quy trình làm việc liên hoàn giữa các hệ thống AI (Gemini, Midjourney, Firefly) để rút ngắn 90% thời gian tìm nguyên liệu thô, dành trọn 100% chất xám còn lại để hậu kỳ thủ công, tinh chỉnh Visual Hierarchy và địa phương hóa văn phong cho phù hợp với thực tế Việt Nam.</p>
+                    </div>
+
+                    <div class="reflection-card challenges">
+                        <h3>⚠️ Những thách thức đã gặp phải</h3>
+                        <p>Thách thức lớn nhất chính là hiện tượng <strong>"Trễ deadline ngầm"</strong> từ các thành viên nhóm khi vận hành Trello và các lỗi dị tật chi tiết khi tạo ảnh bằng AI. Để vượt qua, tôi đã phải tự rèn luyện năng lực điều phối, chủ động bình luận tương tác chéo để thúc đẩy tinh thần đồng đội, đồng thời tự học thêm kỹ năng hậu kỳ ảnh trên Gimp để sửa thủ công các lỗi giải phẫu do AI sinh ra.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="thank-you-box">
+                <h3>Lời Cảm Ơn</h3>
+                <p>Dự án Portfolio này sẽ không thể hoàn thiện nếu thiếu đi sự đồng hành, đóng góp của các thành viên trong nhóm và những lời góp ý quý báu từ thầy cô. <strong>Cảm ơn mọi người đã ghé qua và đón xem trang Portfolio của mình!</strong></p>
+            </section>
+
+        </div>
+    </my-portfolio-box>
+</template>
